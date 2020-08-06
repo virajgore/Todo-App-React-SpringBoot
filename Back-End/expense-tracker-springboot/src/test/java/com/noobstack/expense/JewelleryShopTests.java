@@ -1,10 +1,10 @@
-package app.netlify.noobstack.noobstack;
+package com.noobstack.expense;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NoobstackApplicationTests {
+class JewelleryShopTests {
 
 	@Test
 	void contextLoads() {
