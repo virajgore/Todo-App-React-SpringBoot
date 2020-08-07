@@ -1,6 +1,6 @@
-# EXPENSE TRACKER APP with java spring boot
+# Todo APP with java spring boot
 
-Simple Expense Tracker App developed with Spring boot and React
+Simple Todo App developed with Spring boot and React
 
 ## Getting Started
 
@@ -28,4 +28,4 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/nadunc/AWS-S3-image-uploader-with-java-spring-boot/blob/master/LICENSE) file for details
+This project is licensed under the MIT License
