@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import M from "materialize-css";
 
 class Category extends Component {
   constructor() {
     super();
     this.state = {
       categories: [],
+      temp : "",
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   style = () => {
@@ -22,6 +25,25 @@ class Category extends Component {
       marginTop: "20px",
     };
   };
+
+  async handleSubmit(event){
+  
+    await event.preventDefault();
+    const category = document.getElementById('category_name').value;
+    await fetch('/api/category' , {
+    	headers: {
+      		'Accept': 'application/json',
+      		'Content-Type': 'application/json'
+    	},
+    	method: "POST",
+    	body: JSON.stringify({name : category})
+    })
+    
+    M.toast({html: 'Category has been addd to the data base'})
+    document.getElementById('category_name').value = "";
+    this.setState({temp: "re-render"});
+    
+  }
 
   async componentDidMount() {
     const APICall = await fetch("/api/categories");
@@ -49,16 +71,18 @@ class Category extends Component {
                   <div className="row">
                     <form className="col s12">
                       <div className="row">
-                        <div className="input-field col s12">
-                          <input id="email" type="email" className="validate" />
-                          <label htmlFor="email">Category Name</label>
-                        </div>
+                        <div class="input-field col s12">
+          			<input id="category_name" placeholder="Category Name" type="text" class="validate" />
+          			<label for="first_name">Category Name</label>
+        		</div>
                       </div>
 
                       <div className="center-align center">
                         <button
+                          
                           className="btn center-align grey darken-3"
                           style={{ width: "100%" }}
+                          onClick={this.handleSubmit}
                         >
                           Add
                         </button>
