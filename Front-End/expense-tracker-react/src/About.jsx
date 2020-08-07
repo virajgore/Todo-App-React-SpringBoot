@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 
-class Home extends Component {
+class About extends Component {
   constructor() {
     super();
     this.state = {};
@@ -70,9 +70,9 @@ class Home extends Component {
           </ul>
         </div>
         <div className="container center test">
-          <h4>EXPENSE TRACKER APP with java spring boot</h4>
+          <h4>Todo App with java spring boot</h4>
           <h6>
-            Simple Expense Tracker App developed with Spring boot and React
+            Simple ExpeTodo App developed with Spring boot and React
           </h6>
           <h4>Getting Started</h4>
           <h6>
@@ -109,4 +109,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default About;

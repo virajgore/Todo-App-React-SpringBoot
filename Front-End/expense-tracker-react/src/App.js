@@ -3,10 +3,9 @@ import "./App.css";
 import "materialize-css/dist/css/materialize.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Home from './Home';
 import Navbar from "./Navbar";
 import Category from "./Category";
-import Expenses from './Expenses'
+import About from "./About";
 
 function App() {
   return (
@@ -14,9 +13,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/" exact component={Home} />
           <Route path="/category" exact component={Category} />
-          <Route path="/expenses" exact component={Expenses} />
+          <Route path="/" exact component={Category} />
+          <Route path="/about" exact component={About} />
         </Switch>
       </div>
     </Router>

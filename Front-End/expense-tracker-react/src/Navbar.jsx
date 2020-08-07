@@ -30,13 +30,10 @@ class Navbar extends Component {
             </a>
             <ul class="right hide-on-med-and-down">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/category">Home</Link>
               </li>
               <li>
-                <Link to="/category">Category</Link>
-              </li>
-              <li>
-                <Link to="/expenses">Expenses</Link>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </div>
@@ -44,13 +41,10 @@ class Navbar extends Component {
 
         <ul class="sidenav" id="mobile-demo">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/category">Home</Link>
           </li>
           <li>
-            <Link to="/category">Category</Link>
-          </li>
-          <li>
-            <Link to="/expenses">Expenses</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </React.Fragment>

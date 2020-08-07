@@ -6,7 +6,7 @@ class Category extends Component {
     super();
     this.state = {
       categories: [],
-      temp : "",
+      temp: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -26,29 +26,27 @@ class Category extends Component {
     };
   };
 
-  async handleSubmit(event){
-  
+  async handleSubmit(event) {
     await event.preventDefault();
-    const category = document.getElementById('category_name').value;
-    await fetch('/api/category' , {
-    	headers: {
-      		'Accept': 'application/json',
-      		'Content-Type': 'application/json'
-    	},
-    	method: "POST",
-    	body: JSON.stringify({name : category})
-    })
-    
-    M.toast({html: 'Category has been addd to the data base'})
-    document.getElementById('category_name').value = "";
-    this.setState({temp: "re-render"});
-    
+    const category = document.getElementById("category_name").value;
+    await fetch("/api/category", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ name: category }),
+    });
+
+    M.toast({ html: "Category has been addd to the data base" });
+    document.getElementById("category_name").value = "";
+    this.setState({ temp: "re-render" });
   }
 
   async componentDidMount() {
     const APICall = await fetch("/api/categories");
     const result = await APICall.json();
-    this.setState({categories: result});
+    this.setState({ categories: result });
   }
 
   render() {
@@ -67,19 +65,23 @@ class Category extends Component {
               </div>
               <div className="card-stacked">
                 <div className="card-content">
-                  <h4 className="center-align grey-text">Add Category</h4>
+                  <h4 className="center-align grey-text">Todo App</h4>
                   <div className="row">
                     <form className="col s12">
                       <div className="row">
                         <div class="input-field col s12">
-          			<input id="category_name" placeholder="Category Name" type="text" class="validate" />
-          			<label for="first_name">Category Name</label>
-        		</div>
+                          <input
+                            id="category_name"
+                            placeholder="Todo..."
+                            type="text"
+                            class="validate"
+                          />
+                          <label for="first_name">Add Todo</label>
+                        </div>
                       </div>
 
                       <div className="center-align center">
                         <button
-                          
                           className="btn center-align grey darken-3"
                           style={{ width: "100%" }}
                           onClick={this.handleSubmit}
