@@ -8,7 +8,7 @@ class Expenses extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container test">
         <h3>this is expenses</h3>
       </div>
     );
